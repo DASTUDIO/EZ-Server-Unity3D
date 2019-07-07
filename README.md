@@ -123,7 +123,7 @@ ezserver._TCP_Server_ShutDown_Client_By_Token(clientID);
 ezserver._TCP_Server_BoardCast_Message_To_All_Clients("hello");
 ```
 
-发送一条Post请求 url地址（String） paramsDic参数列表（Dictionary<string,string>） callback拉取返回消息后的回调时间(Action<string>)
+发送一条Post请求 url地址（String） paramsDic参数列表（Dictionary<string,string>） callback拉取返回消息后的回调时间(Action《string》)
   
 ```
 ezserver.HTTP_Request_POST(url, paramsDic, callback);
