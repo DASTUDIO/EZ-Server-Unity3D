@@ -2,6 +2,7 @@
 
 
 ## 使用方法：
+导入[ezserver package](https://github.com/DASTUDIO/EZ-Server-Unity3D/raw/master/ezserver.unitypackage)到工程
 * 将TaskInvoker.prefab拖入场景
 * 使用命名空间ezserver
 * 使用Invoker.InvokerInMainThread(Action action)和主线程交互（这是因为EZ Server是基于非阻塞Socket） 
