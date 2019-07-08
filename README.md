@@ -17,12 +17,14 @@
 
 
 创建HTTP服务端
+参数：接受到请求后的回调委托，端口
 
 ```
 ezserver.HTTP_Server_Start((string rawURL, string postContent) => { return "Hello World"; },8085); 
 ```
 
 创建TCP Socket 服务端 通过ClientID区分客户端
+参数：Accept回调委托，Receive回调委托，端口，IP类型，Listen
 
 ```
 ezserver.TCP_Server_Start((string clientID)=> { },(string clientID, string receivedStr) => { return "got it"; }, 8084); 
@@ -30,6 +32,7 @@ ezserver.TCP_Server_Start((string clientID)=> { },(string clientID, string recei
 
 
 创建UDP Socket 服务端
+参数：Receive回调委托，端口
 
 ```
 ezserver.UDP_Server_Start((System.Net.EndPoint endPoint, string receivedStr) => { return "got it"; }, 8083);
@@ -42,12 +45,14 @@ ezserver.UDP_Server_Start((System.Net.EndPoint endPoint, string receivedStr) => 
 
 
 创建HTTP客户端
+参数：请求地址，拉取到response后的回调委托
 
 ```
 ezserver.HTTP_Request_GET("http://127.0.0.1", (string data) => { } ); 
 ```
 
 创建TCP客户端
+参数： IP，端口，receive回调委托
 
 ```
 ezserver.TCP_Client_Start("127.0.0.1", 8084, (string receivedStr) => { return "got it"; }); 
@@ -55,6 +60,7 @@ ezserver.TCP_Client_Start("127.0.0.1", 8084, (string receivedStr) => { return "g
 
 
 发送UDP消息（不需要创建客户端）
+参数：目标终端 ， 消息
 
 ```
 ezserver.UDP_Send(new System.Net.IPEndPoint(System.Net.IPAddress.Parse("127.0.0.1"), 8083), "hello");
